@@ -1,16 +1,7 @@
-import { Button, PageHeader } from "antd";
-
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <PageHeader title="HealthMate" subTitle="Home route" />
-      <div>
-        <Button>Sample Antd Button</Button>
-      </div>
-    </div>
-  );
+  return <div>home page should be implemented</div>;
 };
 
 export default Home;
