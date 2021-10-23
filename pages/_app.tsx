@@ -1,4 +1,5 @@
 import "antd/dist/antd.css";
+import "@lib/firebase/init";
 import "@styles/global.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
