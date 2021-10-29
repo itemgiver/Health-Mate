@@ -11,7 +11,7 @@ export default function Container({ children }: PropsWithChildren<{}>) {
         <Layout.Header>
           <Header />
         </Layout.Header>
-        <Layout.Content>{children}</Layout.Content>
+        <Layout.Content className={styles.scroll}>{children}</Layout.Content>
         <Layout.Footer>
           <Footer />
         </Layout.Footer>

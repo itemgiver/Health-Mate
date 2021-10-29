@@ -1,0 +1,94 @@
+.container {
+  background: #fafafa;
+  border-bottom: 2px solid #d9d9d9;
+
+  .myActivity {
+    width: 314px;
+    height: 214.5px;
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 24px;
+    margin: 10px 20px 10px 0;
+    cursor: pointer;
+
+    .img {
+      width: 264px;
+      height: 164.5px;
+    }
+  }
+}
+
+.mentor {
+  background: #fafafa;
+  border-bottom: 2px solid #d9d9d9;
+
+  .card {
+    display: flex;
+    width: 648px;
+    height: 214.5px;
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 24px;
+    margin: 10px 20px 10px 0;
+    cursor: pointer;
+
+    .img {
+      width: 155px;
+      height: 164.5px;
+    }
+
+    .info {
+      width: 70%;
+      margin-top: 6px;
+      margin-left: 24px;
+
+      .title {
+        display: flex;
+        height: 35px;
+        padding-left: 3px;
+        margin-bottom: 13px;
+        border-bottom: 1px solid black;
+
+        .name {
+          font-size: 20px;
+        }
+        .img {
+          width: 120px;
+          height: 24px;
+          margin: 2.5px 6px 0 20px;
+        }
+        .rating {
+          font-size: 16px;
+          margin-top: 2.5px;
+        }
+      }
+
+      .ul {
+        padding-left: 3px;
+        list-style-type: none;
+
+        .li {
+          display: flex;
+          margin-bottom: 10px;
+
+          .span {
+            display: inline-block;
+            width: 80px;
+            height: 24px;
+            background: #341716;
+            line-height: 24px;
+            margin-right: 8px;
+            border-radius: 24px;
+            text-align: center;
+            color: white;
+          }
+
+          .text {
+            width: 327.5px;
+            height: 48px;
+          }
+        }
+      }
+    }
+  }
+}

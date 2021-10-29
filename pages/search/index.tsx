@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
+import { Profile } from "../api/profiles";
 
 const Search: NextPage = () => {
-  return <div>search page should be implemented</div>;
+  let src = <div>search page</div>;
+
+  return src;
 };
 
 export default Search;

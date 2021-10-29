@@ -1,0 +1,60 @@
+.container {
+  .title {
+    display: flex;
+    height: 60px;
+    background: #fffbe6;
+    align-items: center;
+    padding-left: 32px;
+    border-top: 2px solid #d9d9d9;
+    border-bottom: 2px solid #d9d9d9;
+
+    .text {
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+
+  .leftBody {
+    background: #fafafa;
+    padding-left: 44px;
+
+    .image {
+      width: 90px;
+      height: 95px;
+    }
+
+    .figCaption {
+      padding: 1% 0% 0% 9%;
+      .memberType {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .rightBody {
+    display: flex;
+    background: #fafafa;
+    padding: 2% 0% 1% 1.5%;
+    border-bottom: 2px solid #d9d9d9;
+
+    .profile {
+      position: relative;
+      width: 100%;
+      padding-left: 3.5%;
+      flex-direction: column;
+
+      .text {
+        display: flex;
+        height: 95px;
+        font-size: 17px;
+        align-items: center;
+      }
+
+      .icons {
+        position: absolute;
+        bottom: 0;
+        cursor: pointer;
+      }
+    }
+  }
+}

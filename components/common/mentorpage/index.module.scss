@@ -1,0 +1,94 @@
+.container {
+  background: #fafafa;
+  border-bottom: 2px solid #d9d9d9;
+  
+
+  .nullCard {
+    width: 314px;
+    height: 238px;
+    background: #f0f0f0;
+    border: 1px solid #d9d9d9;
+    border-radius: 24px;
+    margin: 20px 20px 0px 0px;
+    cursor: pointer;
+
+    .null {
+      display: flex;
+      height: 188px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .icon {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      .text {
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+  }
+
+  .menteeCard {
+    width: 314px;
+    height: 238px;
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 24px;
+    margin: 20px 20px 0px 0px;
+    cursor: pointer;
+
+    .basic {
+      display: flex;
+      height: 125px;
+
+      .image {
+        width: 120px;
+        height: 125px;
+      }
+
+      .info {
+        width: 100%;
+        margin-top: 6px;
+        margin-left: 24px;
+
+        .name {
+          height: 35px;
+          font-size: 20px;
+          padding-left: 3px;
+          margin-bottom: 13px;
+          border-bottom: 1px solid black;
+        }
+
+        .ul {
+          padding-left: 3px;
+          list-style-type: none;
+
+          .li {
+            margin-bottom: 10px;
+
+            .span {
+              display: inline-block;
+              width: 70px;
+              height: 24px;
+              background: #341716;
+              line-height: 24px;
+              margin-right: 8px;
+              border-radius: 24px;
+              text-align: center;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .description {
+      height: 65px;
+      padding: 8px;
+      margin: 7px 0 0 5px;
+      font-size: 16px;
+    }
+  }
+}
