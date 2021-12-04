@@ -1,23 +1,9 @@
 import { useCollection } from "react-firebase-hooks/firestore";
-import firebase from "firebase/app";
-import type Profile from "@models/profile";
-import CollectionName from "@lib/firebase/collections";
+import GetProfile from "@lib/utils/getprofile";
 
 export default function UserProfile() {
-  const [value, loading, error] = useCollection<Profile>(
-    firebase
-      .firestore()
-      .collection(CollectionName.PROFILE)
-      .where("name", "==", "jayden")
-      .limit(1),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true },
-    }
-  );
-
-  if (loading) return <div>Loading</div>;
-  if (error) return <div>Error</div>;
-  if (!value) return null;
+  const [value, loading, error] = GetProfile("userid001");
+  if (loading || error || !value || value.docs.length == 0) return <div></div>;
 
   const profile = value.docs[0].data();
 

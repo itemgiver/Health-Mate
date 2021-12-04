@@ -39,14 +39,23 @@
 
     .profile {
       position: relative;
-      width: 100%;
+      width: 450px;
       padding-left: 3.5%;
       flex-direction: column;
 
+      .name {
+        display: flex;
+        height: 35px;
+        margin: 0;
+        border-bottom: 1px solid #595959;
+        font-size: 20px;
+        align-items: center;
+      }
+
       .text {
         display: flex;
-        height: 95px;
-        font-size: 17px;
+        height: 65px;
+        font-size: 14px;
         align-items: center;
       }
 

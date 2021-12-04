@@ -5,6 +5,7 @@ type Props = {
   age: number;
   location: string;
   description: string;
+  rating: number;
 };
 
 export default function MentorProfile(props: Props) {
@@ -16,7 +17,7 @@ export default function MentorProfile(props: Props) {
           className={styles.img}
           src="https://www.assesspeople.com/img/rating.png"
         />
-        <p className={styles.rating}>(4.9)</p>
+        <p className={styles.rating}>({props.rating})</p>
       </div>
 
       <ul className={styles.ul}>

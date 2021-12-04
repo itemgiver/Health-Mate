@@ -4,6 +4,7 @@ import ShowNull from "@components/common/mentorpage/showNull";
 import ShowMentee from "@components/common/mentorpage/showMentee";
 import { MemberType } from "@components/common/profile";
 import { Card } from "antd";
+import GetMentees from "@lib/utils/getmentees";
 import styles from "./index.module.scss";
 
 type Props = {
@@ -11,21 +12,22 @@ type Props = {
 };
 
 export default function MentorPage(props: Props) {
-  // TODO construct Mentee information using props.userid
-  const tmp: ProfileType = {
-    userId: "userid000",
-    imgSrc:
-      "https://cdn.topstarnews.net/news/photo/201906/633567_329281_1014.jpg",
-    name: "Gyuho Suh",
-    age: 25,
-    location: "Seoul",
-    description: "I like to exercise every day. I'm finding a new health mate.",
-    memberType: MemberType.MENTEE,
-  };
-  const nouser: ProfileType = { memberType: MemberType.NULL };
-  const informations: ProfileType[] = [tmp, tmp, tmp, nouser];
-
   const router = useRouter();
+  const nullUser = { userId: "null", memberType: MemberType.NULL };
+  const informations = [nullUser, nullUser, nullUser, nullUser];
+
+  const [value, loading, error] = GetMentees(props.userId);
+  if (!(loading || error || !value)) {
+    for (let i = 0; i < value.docs.length; i++) {
+      informations[i] = {
+        userId: value.docs[i].data().menteeId,
+        memberType: MemberType.MENTEE,
+      };
+    }
+    informations[value.docs.length] = nullUser;
+    if (value.docs.length % 2 == 0)
+      informations[value.docs.length + 1] = nullUser;
+  }
 
   return (
     <Card
@@ -47,13 +49,13 @@ export default function MentorPage(props: Props) {
           menteeInfo.memberType === MemberType.NULL
             ? Paths.SEARCH
             : Paths.CHATTING;
-        const handleClick = (e) => {
+        const handleClick = (e: React.MouseEvent<HTMLElement>) => {
           e.preventDefault();
           router.push(href);
         };
 
         return (
-          <div>
+          <div key={idx}>
             {menteeInfo.memberType === MemberType.NULL && (
               <Card.Grid
                 className={styles.nullCard}
@@ -70,13 +72,7 @@ export default function MentorPage(props: Props) {
                 onClick={handleClick}
                 key={idx}
               >
-                <ShowMentee
-                  imgSrc={menteeInfo.imgSrc}
-                  name={menteeInfo.name}
-                  age={menteeInfo.age}
-                  location={menteeInfo.location}
-                  description={menteeInfo.description}
-                ></ShowMentee>
+                <ShowMentee userId={menteeInfo.userId}></ShowMentee>
               </Card.Grid>
             )}
           </div>

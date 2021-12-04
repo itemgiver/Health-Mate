@@ -17,6 +17,7 @@ export enum MemberType {
 
 type Props = {
   imgSrc: string;
+  name: string;
   description: string;
   memberType: MemberType;
 };
@@ -54,6 +55,7 @@ export default function Profile(props: Props) {
         />
 
         <div className={styles.profile}>
+          <p className={styles.name}>{props.name}</p>
           <p className={styles.text}>{props.description}</p>
 
           <div className={styles.icons}>

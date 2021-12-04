@@ -10,12 +10,13 @@ type Props = {
   age: number;
   location: string;
   description: string;
+  rating: number;
 };
 
 export default function MyMentor(props: Props) {
   const router = useRouter();
   const href = Paths.CHATTING;
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     router.push(href);
   };
@@ -43,6 +44,7 @@ export default function MyMentor(props: Props) {
           age={props.age}
           location={props.location}
           description={props.description}
+          rating={props.rating}
         />
       </Card.Grid>
     </Card>
