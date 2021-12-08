@@ -27,8 +27,8 @@ export default function showNull() {
       }}
       bodyStyle={{ padding: "2.5px 0 0 30px" }}
     >
-      <Card.Grid className={styles.nullCard} onClick={handleClick}>
-        <div className={styles.null}>
+      <Card.Grid className={styles.nullCard}>
+        <div className={styles.null} onClick={handleClick}>
           <PlusSquareOutlined className={styles.icon} />
           <p className={styles.text}>Find New Mentor</p>
         </div>

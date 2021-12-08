@@ -1,8 +1,8 @@
 import { useCollection } from "react-firebase-hooks/firestore";
-import GetProfile from "@lib/utils/getprofile";
+import useGetProfile from "@lib/utils/getprofile";
 
 export default function UserProfile() {
-  const [value, loading, error] = GetProfile("userid001");
+  const [value, loading, error] = useGetProfile("userid001");
   if (loading || error || !value || value.docs.length == 0) return <div></div>;
 
   const profile = value.docs[0].data();

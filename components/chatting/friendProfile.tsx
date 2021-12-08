@@ -1,4 +1,4 @@
-import GetProfile from "@lib/utils/getprofile";
+import useGetProfile from "@lib/utils/getprofile";
 import ChatData from "@components/chatting/chatData";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function FriendProfile(props: Props) {
-  const [value, loading, error] = GetProfile(props.friendId);
+  const [value, loading, error] = useGetProfile(props.friendId);
 
   return (
     <div>

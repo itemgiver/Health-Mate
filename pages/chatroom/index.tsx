@@ -1,11 +1,15 @@
 import type { NextPage } from "next";
-import GetProfile from "@lib/utils/getprofile";
+import useGetProfile from "@lib/utils/getprofile";
 import FriendProfile from "@components/chatting/friendProfile";
+import { useRouter } from "next/router";
 
 const ChatRoom: NextPage = () => {
-  const userId = "userid001";
-  const friendId = "userid002";
-  const [value, loading, error] = GetProfile(userId);
+  const router = useRouter();
+
+  const userId = (router.query.userid as string) ?? "";
+  const friendId = (router.query.friendid as string) ?? "";
+
+  const [value, loading, error] = useGetProfile(userId);
 
   return (
     <div>

@@ -57,22 +57,18 @@ export default function MentorPage(props: Props) {
         return (
           <div key={idx}>
             {menteeInfo.memberType === MemberType.NULL && (
-              <Card.Grid
-                className={styles.nullCard}
-                onClick={handleClick}
-                key={idx}
-              >
-                <ShowNull userId={props.userId}></ShowNull>
+              <Card.Grid className={styles.nullCard} key={idx}>
+                <div onClick={handleClick}>
+                  <ShowNull userId={props.userId} />
+                </div>
               </Card.Grid>
             )}
 
             {menteeInfo.memberType === MemberType.MENTEE && (
-              <Card.Grid
-                className={styles.menteeCard}
-                onClick={handleClick}
-                key={idx}
-              >
-                <ShowMentee userId={menteeInfo.userId}></ShowMentee>
+              <Card.Grid className={styles.menteeCard} key={idx}>
+                <div onClick={handleClick}>
+                  <ShowMentee userId={menteeInfo.userId} />
+                </div>
               </Card.Grid>
             )}
           </div>

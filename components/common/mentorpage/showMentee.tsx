@@ -1,12 +1,12 @@
 import MyMentee from "@components/common/mentorpage/myMentee";
-import GetProfile from "@lib/utils/getprofile";
+import useGetProfile from "@lib/utils/getprofile";
 
 type Props = {
   userId: string;
 };
 
 export default function ShowMentee(props: Props) {
-  const [value, loading, error] = GetProfile(props.userId);
+  const [value, loading, error] = useGetProfile(props.userId);
 
   return (
     <div>

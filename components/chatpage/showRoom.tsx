@@ -1,9 +1,9 @@
-import GetProfile from "@lib/utils/getprofile";
+import useGetProfile from "@lib/utils/getprofile";
 import Paths from "@lib/paths";
 import PostLastTime from "@lib/utils/postLastTime";
 import { useRouter } from "next/router";
-import { FireStoreTimeStamp } from "@models/common";
 import styles from "./index.module.scss";
+import { stringify } from "qs";
 
 type Props = {
   userId: string;
@@ -14,13 +14,16 @@ type Props = {
 };
 
 export default function ShowRoom(props: Props) {
-  const [value, loading, error] = GetProfile(props.friendId);
+  const [value, loading, error] = useGetProfile(props.friendId);
   const router = useRouter();
-  const href = Paths.CHATROOM;
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
+    const query = stringify(
+      { userid: props.userId, friendid: props.friendId },
+      { addQueryPrefix: true }
+    );
     PostLastTime(props.userId, props.friendId);
-    router.push(href);
+    router.push(Paths.CHATROOM + query);
   };
 
   return (

@@ -1,4 +1,4 @@
-import GetProfile from "@lib/utils/getprofile";
+import useGetProfile from "@lib/utils/getprofile";
 import ShowNull from "@components/common/menteepage/showNull";
 import MyActivity from "@components/common/menteepage/myActivity";
 import ShowMentor from "@components/common/menteepage/showMentor";
@@ -13,7 +13,7 @@ export default function MentorData(props: Props) {
     "https://drive.google.com/uc?export=view&id=19nXgPxLB_yI6JPq6VKyd3m2DvpgAtMjC",
   ];
 
-  const [value, loading, error] = GetProfile(props.mentorId);
+  const [value, loading, error] = useGetProfile(props.mentorId);
   return (
     <div>
       {(loading || error || !value || value.docs.length === 0) && (

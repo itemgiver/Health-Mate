@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import CollectionName from "@lib/firebase/collections";
 import { useCollection } from "react-firebase-hooks/firestore";
 
-export default function GetProfile(userId: string) {
+export default function useGetProfile(userId: string) {
   return useCollection(
     firebase
       .firestore()
