@@ -14,7 +14,7 @@ export default function Footer() {
       <Link href={Paths.SEARCH}>
         <SearchOutlined />
       </Link>
-      <Link href={Paths.HOME}>
+      <Link href={Paths.SETTING}>
         <HomeOutlined />
       </Link>
       <Link href={Paths.CHATTING}>
