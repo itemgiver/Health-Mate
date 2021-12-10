@@ -6,11 +6,11 @@ import { SearchOutlined } from "@ant-design/icons";
 export default function SearchBox() {
   const [message, setMessage] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
   };
 
-  const handleEnter = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.keyCode === 13 && !e.shiftKey) {
       e.preventDefault();
       setMessage("");
