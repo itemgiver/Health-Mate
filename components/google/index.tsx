@@ -1,9 +1,23 @@
 import { GoogleLogin } from "react-google-login";
 import styles from "./index.module.scss";
+import { useRouter } from "next/router";
+import Paths from "@lib/paths";
+import { stringify } from "qs";
 
 export default function GoogleLoginComp() {
+  const router = useRouter();
+
   const handleSuccess = (data: any) => {
-    console.log("handleSuccess", data);
+    console.log("handleSuccess", data.googleId);
+
+    // router.push(Paths.HOME)
+
+    const query = stringify(
+      { googleId: data.googleId },
+      { addQueryPrefix: true }
+    );
+
+    router.push(Paths.SIGN_UP + query);
   };
 
   const handleFailure = (data: any) => {

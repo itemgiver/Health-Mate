@@ -1,5 +1,6 @@
 enum Paths {
   HOME = "/",
+  SIGN_UP = "/auth/signup",
   SEARCH = "/search",
   CHATTING = "/chatting",
   CHATROOM = "/chatroom",
