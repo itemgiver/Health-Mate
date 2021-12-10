@@ -1,4 +1,6 @@
 import styles from "./displayProfile.module.scss";
+import { useRouter } from "next/router";
+import Paths from "@lib/paths";
 import useGetProfile from "@lib/utils/getprofile";
 
 type Props = {
@@ -10,12 +12,18 @@ export default function DisplayProfile(props: Props) {
   const flag = loading || error || !value || value.docs.length === 0;
   const profile = flag ? {} : value.docs[0].data();
 
+  const router = useRouter();
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    router.push(Paths.CHATTING);
+  };
+
   return (
-    <>
+    <div className={styles.container} onClick={handleClick}>
       {flag ? (
         <div>loading</div>
       ) : (
-        <div className={styles.container}>
+        <>
           <img
             className={styles.img}
             src={profile.imgSrc}
@@ -37,8 +45,8 @@ export default function DisplayProfile(props: Props) {
               </li>
             </ul>
           </div>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 }
