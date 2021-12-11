@@ -5,9 +5,20 @@ import { useRouter } from "next/router";
 import Paths from "@lib/paths";
 import { stringify } from "qs";
 import { useState } from "react";
+import useGetProfile from "@lib/utils/getprofile";
 
 export default function SignUpComponent() {
   const router = useRouter();
+  const [val, load, err] = useGetProfile(router.query.userId as string);
+
+  if (!(load || err || !val) && val.docs.length === 1) {
+    const query = stringify(
+      { userId: val.docs[0].data().userId },
+      { addQueryPrefix: true }
+    );
+    router.push(Paths.HOME + query);
+  }
+
   const [loading, setLoading] = useState(false);
 
   const onFinish = async (values: any) => {

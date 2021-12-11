@@ -6,6 +6,7 @@ import { stringify } from "qs";
 
 type Props = {
   userId: string;
+  myId: string;
 };
 
 export default function DisplayProfile(props: Props) {
@@ -14,7 +15,7 @@ export default function DisplayProfile(props: Props) {
   const profile = flag ? {} : value.docs[0].data();
 
   const router = useRouter();
-  const query = stringify({ userId: props.userId }, { addQueryPrefix: true });
+  const query = stringify({ userId: props.myId }, { addQueryPrefix: true });
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     router.push(Paths.CHATTING + query);
