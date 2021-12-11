@@ -3,13 +3,19 @@ import Paths from "@lib/paths";
 import { Card } from "antd";
 import { PlusSquareOutlined } from "@ant-design/icons";
 import styles from "./index.module.scss";
+import { stringify } from "qs";
 
-export default function showNull() {
+type Props = {
+  userId: string;
+};
+
+export default function showNull(props: Props) {
   const router = useRouter();
   const href = Paths.SEARCH;
+  const query = stringify({ userId: props.userId }, { addQueryPrefix: true });
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    router.push(href);
+    router.push(href + query);
   };
 
   return (

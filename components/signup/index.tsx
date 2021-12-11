@@ -12,18 +12,18 @@ export default function SignUpComponent() {
 
   const onFinish = async (values: any) => {
     setLoading(true);
-    const googleId = router.query.googleId as string;
+    const googleId = router.query.userId as string;
     await createUserProfile({
       name: values.name,
-      age: values.age,
-      intro: values.intro,
+      age: Number(values.age),
+      description: values.intro,
       memberType: values.memberType,
       imgSrc: values.imgSrc,
       userId: googleId,
     });
     setLoading(false);
     const query = stringify({ userId: googleId }, { addQueryPrefix: true });
-    router.push(Paths.SETTING + query);
+    router.push(Paths.HOME + query);
   };
 
   const onFinishFailed = (errorInfo: any) => {

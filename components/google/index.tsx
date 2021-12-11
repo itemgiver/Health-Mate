@@ -3,21 +3,27 @@ import styles from "./index.module.scss";
 import { useRouter } from "next/router";
 import Paths from "@lib/paths";
 import { stringify } from "qs";
+import useGetProfile from "@lib/utils/getprofile";
 
 export default function GoogleLoginComp() {
   const router = useRouter();
 
   const handleSuccess = (data: any) => {
+    //TODO
+    //const [value, loading, error] = useGetProfile(data.googleId);
+    const flag = true;
     console.log("handleSuccess", data.googleId);
 
-    // router.push(Paths.HOME)
-
     const query = stringify(
-      { googleId: data.googleId },
+      { userId: data.googleId },
       { addQueryPrefix: true }
     );
 
-    router.push(Paths.SIGN_UP + query);
+    if (flag) {
+      router.push(Paths.HOME + query);
+    } else {
+      router.push(Paths.SIGN_UP + query);
+    }
   };
 
   const handleFailure = (data: any) => {

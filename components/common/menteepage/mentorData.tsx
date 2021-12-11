@@ -4,6 +4,7 @@ import MyActivity from "@components/common/menteepage/myActivity";
 import ShowMentor from "@components/common/menteepage/showMentor";
 
 type Props = {
+  userId: string;
   mentorId: string;
 };
 
@@ -18,7 +19,7 @@ export default function MentorData(props: Props) {
     <div>
       {(loading || error || !value || value.docs.length === 0) && (
         <div>
-          <ShowNull />
+          <ShowNull userId={props.userId} />
           <MyActivity images={activityImages} />
         </div>
       )}
