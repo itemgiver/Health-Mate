@@ -10,6 +10,7 @@ export default function ShowMentor(props: Props) {
   return (
     <div>
       <MyMentor
+        userId={props.profile.userId}
         imgSrc={props.profile.imgSrc}
         name={props.profile.name}
         age={props.profile.age}

@@ -1,18 +1,30 @@
 import type { NextPage } from "next";
 import UserProfile from "@components/setting/user-profile";
-import HomePage from "@components/common/homepage";
+import { useRouter } from "next/router";
 import useGetProfile from "@lib/utils/getprofile";
+import { Fragment } from "react";
+import dynamic from "next/dynamic";
+const GoogleLoginComp = dynamic(() => import("@components/google"), {
+  ssr: false,
+});
 
 const Setting: NextPage = () => {
-  const [value, loading, error] = useGetProfile("userid001");
+  const router = useRouter();
+  const userId = router.query.hasOwnProperty("userId")
+    ? (router.query.userId as string)
+    : "";
+  const [value, loading, error] = useGetProfile(userId);
+  const flag = loading || error || !value || value.docs.length === 0;
+
   return (
     <div>
-      {(loading || error || !value || value.docs.length === 0) && <div></div>}
-      {!(loading || error || !value || value.docs.length === 0) && (
-        <HomePage profile={value.docs[0].data()} />
+      {flag ? (
+        <GoogleLoginComp />
+      ) : (
+        <Fragment>
+          <UserProfile id={userId} value={value} />
+        </Fragment>
       )}
-      setting page should be implemented
-      <UserProfile />
     </div>
   );
 };

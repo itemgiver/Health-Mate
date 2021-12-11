@@ -8,11 +8,13 @@ type Props = {
 
 export default function FriendProfile(props: Props) {
   const [value, loading, error] = useGetProfile(props.friendId);
+  const flag = loading || error || !value || value.docs.length === 0;
 
   return (
     <div>
-      {(loading || error || !value || value.docs.length == 0) && <div></div>}
-      {!(loading || error || !value || value.docs.length == 0) && (
+      {flag ? (
+        <div></div>
+      ) : (
         <ChatData user={props.user} friend={value.docs[0].data()} />
       )}
     </div>

@@ -3,8 +3,8 @@ import CollectionName from "@lib/firebase/collections";
 
 type Body = {
   name: string;
-  age: string;
-  intro: string;
+  age: number;
+  description: string;
   memberType: string;
   imgSrc: string;
   userId: string;
@@ -12,6 +12,11 @@ type Body = {
 
 export default async function createUserProfile(body: Body) {
   await firebase.firestore().collection(CollectionName.PROFILE).add({
-    body,
+    name: body.name,
+    age: body.age,
+    description: body.description,
+    memberType: body.memberType,
+    imgSrc: body.imgSrc,
+    userId: body.userId,
   });
 }

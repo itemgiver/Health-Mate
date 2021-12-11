@@ -19,7 +19,7 @@ export default function ShowRoom(props: Props) {
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     const query = stringify(
-      { userid: props.userId, friendid: props.friendId },
+      { userId: props.userId, friendId: props.friendId },
       { addQueryPrefix: true }
     );
     PostLastTime(props.userId, props.friendId);

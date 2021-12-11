@@ -6,6 +6,7 @@ import { MemberType } from "@components/common/profile";
 import { Card } from "antd";
 import GetMentees from "@lib/utils/getmentees";
 import styles from "./index.module.scss";
+import { stringify } from "qs";
 
 type Props = {
   userId: string;
@@ -49,9 +50,13 @@ export default function MentorPage(props: Props) {
           menteeInfo.memberType === MemberType.NULL
             ? Paths.SEARCH
             : Paths.CHATTING;
+        const query = stringify(
+          { userId: props.userId },
+          { addQueryPrefix: true }
+        );
         const handleClick = (e: React.MouseEvent<HTMLElement>) => {
           e.preventDefault();
-          router.push(href);
+          router.push(href + query);
         };
 
         return (

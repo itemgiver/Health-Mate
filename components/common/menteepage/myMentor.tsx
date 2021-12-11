@@ -3,8 +3,10 @@ import Paths from "@lib/paths";
 import { Card } from "antd";
 import MentorProfile from "@components/common/menteepage/mentorProfile";
 import styles from "./index.module.scss";
+import { stringify } from "qs";
 
 type Props = {
+  userId: string;
   imgSrc: string;
   name: string;
   age: number;
@@ -16,6 +18,7 @@ type Props = {
 export default function MyMentor(props: Props) {
   const router = useRouter();
   const href = Paths.CHATTING;
+  const query = stringify({ userId: props.userId }, { addQueryPrefix: true });
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     router.push(href);
