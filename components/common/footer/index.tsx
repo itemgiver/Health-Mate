@@ -20,19 +20,36 @@ export default function Footer() {
       ? ""
       : stringify({ userId: userId }, { addQueryPrefix: true });
 
+  const url = window.location.href;
+  const flags = [
+    url.includes(Paths.SEARCH + query),
+    url.includes(Paths.HOME + query),
+    url.includes(Paths.CHATTING + query),
+    url.includes(Paths.SETTING + query),
+  ];
+  const iconColor = "#5b8c00";
+
   return (
     <div className={styles.container}>
       <Link href={Paths.SEARCH + query}>
-        <SearchOutlined />
+        <div className={styles.box}>
+          <SearchOutlined style={{ color: flags[0] ? iconColor : "black" }} />
+        </div>
       </Link>
       <Link href={Paths.HOME + query}>
-        <HomeOutlined />
+        <div className={styles.box}>
+          <HomeOutlined style={{ color: flags[1] ? iconColor : "black" }} />
+        </div>
       </Link>
       <Link href={Paths.CHATTING + query}>
-        <WechatOutlined />
+        <div className={styles.box}>
+          <WechatOutlined style={{ color: flags[2] ? iconColor : "black" }} />
+        </div>
       </Link>
       <Link href={Paths.SETTING + query}>
-        <SettingOutlined />
+        <div className={styles.box}>
+          <SettingOutlined style={{ color: flags[3] ? iconColor : "black" }} />
+        </div>
       </Link>
     </div>
   );
