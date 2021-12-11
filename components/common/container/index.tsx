@@ -12,7 +12,7 @@ export default function Container({ children }: PropsWithChildren<{}>) {
           <Header />
         </Layout.Header>
         <Layout.Content className={styles.scroll}>{children}</Layout.Content>
-        <Layout.Footer>
+        <Layout.Footer style={{ padding: "9px 50px" }}>
           <Footer />
         </Layout.Footer>
       </Layout>
