@@ -1,7 +1,11 @@
 import firebase from "firebase/app";
 import CollectionName from "@lib/firebase/collections";
 
-export default async function PostProfile(userId: string, modifyNum: number, text: string) {
+export default async function PostProfile(
+  userId: string,
+  modifyNum: number,
+  text: string
+) {
   console.log(modifyNum, text);
   const targetProfile = await firebase
     .firestore()
@@ -16,19 +20,19 @@ export default async function PostProfile(userId: string, modifyNum: number, tex
     .doc(profilePathId);
   switch (modifyNum) {
     case 0:
-      profileRef.update({imgSrc: text})
+      profileRef.update({ imgSrc: text });
       break;
     case 1:
-      profileRef.update({name: text})
+      profileRef.update({ name: text });
       break;
     case 2:
-      profileRef.update({age: Number(text)})
+      profileRef.update({ age: Number(text) });
       break;
     case 3:
-      profileRef.update({location: text})
+      profileRef.update({ location: text });
       break;
     case 4:
-      profileRef.update({description: text})
+      profileRef.update({ description: text });
       break;
   }
 }
