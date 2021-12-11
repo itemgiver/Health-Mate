@@ -24,7 +24,11 @@ export default function SearchPage(props: Props) {
   return (
     <div className={styles.container}>
       <SearchBox onChange={eventHandler} />
-      <GetResult keyword={keyword} memberType={profile.memberType} />
+      <GetResult
+        userId={props.userId}
+        keyword={keyword}
+        memberType={profile.memberType}
+      />
     </div>
   );
 }

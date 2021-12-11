@@ -7,6 +7,7 @@ import useGetUserId from "@lib/utils/getuserId";
 import { useState } from "react";
 
 type Props = {
+  userId: string;
   keyword: string;
   memberType: MemberType;
 };
@@ -46,7 +47,7 @@ export default function GetResult(props: Props) {
         {userIds.map((userId, idx) => {
           return (
             <Card.Grid className={styles.card} key={idx}>
-              <DisplayProfile userId={userId} />
+              <DisplayProfile userId={userId} myId={props.userId} />
             </Card.Grid>
           );
         })}
