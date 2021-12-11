@@ -147,113 +147,115 @@ export default function UserProfile(props: { id: string; value: any }) {
     <Fragment>
       {profile && (
         <Fragment>
-          <div style={style_title}>
-            <p style={style_head_text}>내 프로필 수정</p>
-          </div>
-          <div style={style_img}>
-            <img
-              src={imgSrc}
-              height="200px"
-              width="200px"
-              style={{ marginLeft: "-100px" }}
-              onClick={() => {
-                openModals(0);
-              }}
-            />
-          </div>
-          <div style={style_basicInfo}>
-            <div
-              style={style_basicText}
-              onClick={() => {
-                openModals(1);
-              }}
-            >
-              <button style={style_button}>이름</button>: {name}
+          <div style={{ backgroundColor: "white" }}>
+            <div style={style_title}>
+              <p style={style_head_text}>내 프로필 수정</p>
             </div>
-
-            <div
-              style={style_basicText}
-              onClick={() => {
-                openModals(2);
-              }}
-            >
-              <button style={style_button}>나이</button>: {age}
-            </div>
-            <div
-              style={style_basicText}
-              onClick={() => {
-                openModals(3);
-              }}
-            >
-              <button style={style_button}>지역</button>: {location}
-            </div>
-            <div
-              style={style_basicText}
-              onClick={() => {
-                openModals(4);
-              }}
-            >
-              <button style={style_button}>소개</button>
-              <p style={style_description}>{description}</p>
-            </div>
-          </div>
-          {showModal && (
-            <div
-              style={{
-                position: "fixed",
-                top: "0",
-                left: "0",
-                right: "0",
-                bottom: "0",
-                background: "rgba(0,0,0,0.3)",
-                zIndex: 1,
-                paddingLeft: "50%",
-                paddingTop: "25%",
-              }}
-              onClick={() => {
-                openModals(-1);
-              }}
-            >
-              <div
-                style={{
-                  position: "absolute",
-                  padding: "5px",
-                  marginLeft: "-250px",
-                  background: "#eeeeff",
-                  zIndex: 2,
-                  alignItems: "center",
+            <div style={style_img}>
+              <img
+                src={imgSrc}
+                height="200px"
+                width="200px"
+                style={{ marginLeft: "-100px" }}
+                onClick={() => {
+                  openModals(0);
                 }}
-                onClick={(e) => {
-                  e.stopPropagation();
+              />
+            </div>
+            <div style={style_basicInfo}>
+              <div
+                style={style_basicText}
+                onClick={() => {
+                  openModals(1);
                 }}
               >
-                {modifyNum != 4 && (
-                  <input
-                    ref={inputText}
-                    type="text"
-                    placeholder={inputValue}
-                    size={inputSize}
-                  ></input>
-                )}
-                {modifyNum === 4 && (
-                  <textarea
-                    ref={inputTextarea}
-                    placeholder={inputValue}
-                    style={{ width: "400px", height: "150px" }}
-                  ></textarea>
-                )}
-                <button
-                  style={style_button}
-                  onClick={() => {
-                    changeInput();
-                    openModals(-1);
-                  }}
-                >
-                  수정
-                </button>
+                <button style={style_button}>이름</button>: {name}
+              </div>
+
+              <div
+                style={style_basicText}
+                onClick={() => {
+                  openModals(2);
+                }}
+              >
+                <button style={style_button}>나이</button>: {age}
+              </div>
+              <div
+                style={style_basicText}
+                onClick={() => {
+                  openModals(3);
+                }}
+              >
+                <button style={style_button}>지역</button>: {location}
+              </div>
+              <div
+                style={style_basicText}
+                onClick={() => {
+                  openModals(4);
+                }}
+              >
+                <button style={style_button}>소개</button>
+                <p style={style_description}>{description}</p>
               </div>
             </div>
-          )}
+            {showModal && (
+              <div
+                style={{
+                  position: "fixed",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  background: "rgba(0,0,0,0.3)",
+                  zIndex: 1,
+                  paddingLeft: "50%",
+                  paddingTop: "25%",
+                }}
+                onClick={() => {
+                  openModals(-1);
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    padding: "5px",
+                    marginLeft: "-250px",
+                    background: "#eeeeff",
+                    zIndex: 2,
+                    alignItems: "center",
+                  }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                >
+                  {modifyNum != 4 && (
+                    <input
+                      ref={inputText}
+                      type="text"
+                      placeholder={inputValue}
+                      size={inputSize}
+                    ></input>
+                  )}
+                  {modifyNum === 4 && (
+                    <textarea
+                      ref={inputTextarea}
+                      placeholder={inputValue}
+                      style={{ width: "400px", height: "150px" }}
+                    ></textarea>
+                  )}
+                  <button
+                    style={style_button}
+                    onClick={() => {
+                      changeInput();
+                      openModals(-1);
+                    }}
+                  >
+                    수정
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </Fragment>
       )}
     </Fragment>
