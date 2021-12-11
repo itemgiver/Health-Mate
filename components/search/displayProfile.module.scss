@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  cursor: pointer;
+
+  .img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile {
+    padding: 10px 20px;
+
+    .name {
+      font-size: 20px;
+    }
+
+    .ul {
+      padding-top: 10px;
+      padding-left: 0;
+      list-style-type: none;
+
+      .li {
+        font-size: 15px;
+
+        .span {
+          font-size: 15px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

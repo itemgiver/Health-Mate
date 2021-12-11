@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
+import SearchPage from "@components/search";
 
 const Search: NextPage = () => {
-  let src = <div>search page</div>;
+  const userId = "userid001";
 
-  return src;
+  return <SearchPage userId={userId} />;
 };
 
 export default Search;
