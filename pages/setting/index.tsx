@@ -22,7 +22,6 @@ const Setting: NextPage = () => {
         <GoogleLoginComp />
       ) : (
         <Fragment>
-          <HomePage profile={value.docs[0].data()} />
           <UserProfile id={userId} value={value} />
         </Fragment>
       )}
