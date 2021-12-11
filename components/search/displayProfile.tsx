@@ -2,6 +2,7 @@ import styles from "./displayProfile.module.scss";
 import { useRouter } from "next/router";
 import Paths from "@lib/paths";
 import useGetProfile from "@lib/utils/getprofile";
+import { stringify } from "qs";
 
 type Props = {
   userId: string;
@@ -13,9 +14,10 @@ export default function DisplayProfile(props: Props) {
   const profile = flag ? {} : value.docs[0].data();
 
   const router = useRouter();
+  const query = stringify({ userId: props.userId }, { addQueryPrefix: true });
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    router.push(Paths.CHATTING);
+    router.push(Paths.CHATTING + query);
   };
 
   return (
