@@ -8,7 +8,7 @@ export default function GoogleLoginComp() {
   const router = useRouter();
 
   const handleSuccess = (data: any) => {
-    console.log("handleSuccess", data.googleId);
+    console.log("handleSuccess googleId", data.googleId);
 
     const query = stringify(
       { userId: data.googleId },
