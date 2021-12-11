@@ -12,7 +12,7 @@ export default function GoogleLoginComp() {
     //TODO
     //const [value, loading, error] = useGetProfile(data.googleId);
     const flag = true;
-    console.log("handleSuccess", data.googleId);
+    console.log("handleSuccess googleId: ", data.googleId);
 
     const query = stringify(
       { userId: data.googleId },
