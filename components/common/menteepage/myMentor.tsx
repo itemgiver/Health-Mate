@@ -6,6 +6,7 @@ import styles from "./index.module.scss";
 import { stringify } from "qs";
 
 type Props = {
+  myId: string;
   userId: string;
   imgSrc: string;
   name: string;
@@ -18,10 +19,10 @@ type Props = {
 export default function MyMentor(props: Props) {
   const router = useRouter();
   const href = Paths.CHATTING;
-  const query = stringify({ userId: props.userId }, { addQueryPrefix: true });
+  const query = stringify({ userId: props.myId }, { addQueryPrefix: true });
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
-    router.push(href);
+    router.push(href + query);
   };
 
   return (
