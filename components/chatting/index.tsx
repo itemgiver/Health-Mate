@@ -12,6 +12,7 @@ import { Input } from "antd";
 import ChatMessage from "@components/chatting/chatMessage";
 import PostMessage from "@lib/utils/postmessage";
 import styles from "./index.module.scss";
+import { stringify } from "qs";
 
 const { TextArea } = Input;
 
@@ -22,11 +23,17 @@ type Props = {
 };
 
 export default function ChatRoom(props: Props) {
+  const router = useRouter();
   const [message, setMessage] = useState("");
 
   const handleCircle = (e: React.MouseEvent<HTMLDivElement>) => {
-    // TODO
+    const query = stringify(
+      { userId: props.user.userId },
+      { addQueryPrefix: true }
+    );
+
     e.preventDefault();
+    router.push(Paths.CHATTING + query);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
