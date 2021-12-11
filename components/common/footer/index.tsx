@@ -20,12 +20,11 @@ export default function Footer() {
       ? ""
       : stringify({ userId: userId }, { addQueryPrefix: true });
 
-  const url = window.location.href;
   const flags = [
-    url.includes(Paths.SEARCH + query),
-    url.includes(Paths.HOME + query),
-    url.includes(Paths.CHATTING + query),
-    url.includes(Paths.SETTING + query),
+    router.pathname === Paths.SEARCH,
+    router.pathname === Paths.HOME,
+    router.pathname === Paths.CHATTING,
+    router.pathname === Paths.SETTING,
   ];
   const iconColor = "#5b8c00";
 
