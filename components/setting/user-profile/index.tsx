@@ -61,7 +61,7 @@ export default function UserProfile(props: { id: string; value: any }) {
   const [inputValue, setInput] = useState("");
   const [inputSize, setSize] = useState(0);
   const [modifyNum, setMod] = useState(-1);
-  const [inputText, inputTextarea] = [useRef(), useRef()];
+  const [inputText, inputTextarea] = [useRef<any>(), useRef<any>()];
   const geoSrc = `https://www.google.com/maps/@${String(
     profile.locationInfo._lat
   )},${String(profile.locationInfo._long)},13z`;
