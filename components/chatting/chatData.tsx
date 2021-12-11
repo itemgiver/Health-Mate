@@ -14,7 +14,9 @@ export default function ChatData(props: Props) {
 
   return (
     <div>
-      {(loading || error || !value || value.docs.length == 0) && <div></div>}
+      {(loading || error || !value || value.docs.length == 0) && (
+        <div>Invalid friend Id</div>
+      )}
       {!(loading || error || !value || value.docs.length == 0) && (
         <Chatting
           user={props.user}
