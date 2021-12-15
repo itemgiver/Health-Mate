@@ -102,6 +102,7 @@ export default function UserProfile(props: { id: string; value: any }) {
 
   const changeInput = () => {
     let text: string;
+    let flag = false;
     if (modifyNum === 4) {
       text = inputText.current.value;
     } else {
@@ -109,38 +110,68 @@ export default function UserProfile(props: { id: string; value: any }) {
     }
     switch (modifyNum) {
       case 0:
-        changeImg(text);
+        flag = changeImg(text);
         break;
       case 1:
-        changeName(text);
+        flag = changeName(text);
         break;
       case 2:
-        changeAge(Number(text));
+        flag = changeAge(Number(text));
         break;
       case 3:
-        changeLoc(text);
+        flag = changeLoc(text);
         break;
       case 4:
-        changeDes(text);
+        flag = changeDes(text);
         break;
     }
-    PostProfile(userId, modifyNum, text);
+    if (flag) {
+      PostProfile(userId, modifyNum, text);
+    }
   };
 
   const changeName = (newName: string) => {
-    setName(newName);
+    if (newName.length >= 1) {
+      setName(newName);
+      openModals(-1);
+      return true;
+    }
+    else {
+      alert("한 자 이상 입력해주세요.");
+      return false;
+    }
   };
   const changeAge = (newAge: number) => {
-    setAge(newAge);
+    if (!isNaN(newAge)) {
+      setAge(newAge);
+      openModals(-1);
+      return true;
+    }
+    else {
+      alert("숫자를 입력해주세요.");
+      return false;
+    }
   };
   const changeLoc = (newLoc: string) => {
-    setLoc(newLoc);
+    if (newLoc.length >= 1) {
+      setLoc(newLoc);
+      openModals(-1);
+      return true;
+    }
+    else {
+      alert("한 자 이상 입력해주세요.");
+      return false;
+    }
   };
   const changeDes = (newDes: string) => {
     setDes(newDes);
+    openModals(-1);
+    return true;
   };
   const changeImg = (newImg: string) => {
     setImg(newImg);
+    openModals(-1);
+    return true;
   };
 
   return (
@@ -247,7 +278,6 @@ export default function UserProfile(props: { id: string; value: any }) {
                     style={style_button}
                     onClick={() => {
                       changeInput();
-                      openModals(-1);
                     }}
                   >
                     수정
