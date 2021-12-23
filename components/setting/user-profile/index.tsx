@@ -177,7 +177,7 @@ export default function UserProfile(props: { id: string; value: any }) {
         <Fragment>
           <div>
             <div style={style_title}>
-              <p style={style_head_text}>My Profile Setting</p>
+              <p style={style_head_text}>My Setting</p>
             </div>
             <div style={style_img}>
               <img
