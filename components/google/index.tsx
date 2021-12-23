@@ -25,7 +25,7 @@ export default function GoogleLoginComp() {
   return (
     <div className={styles.container}>
       <GoogleLogin
-        clientId="756903864035-fqeel4iujm40c3tdl0stvo032omjlhgj.apps.googleusercontent.com"
+        clientId="1067700357036-cec5e4ahnij9auj2i500tvskcer2h56h.apps.googleusercontent.com"
         buttonText="Login"
         onSuccess={handleSuccess}
         onFailure={handleFailure}
