@@ -14,7 +14,10 @@ type Props = {
 };
 
 export default function GetResult(props: Props) {
-  const [value, loading, error] = useSearchProfile(props.category, props.keyword);
+  const [value, loading, error] = useSearchProfile(
+    props.category,
+    props.keyword
+  );
   const flag = loading || error || !value || value.docs.length === 0;
   const profile = flag ? {} : value.docs[0].data();
 

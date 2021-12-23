@@ -27,6 +27,7 @@
       background: white;
       border-bottom: 1px solid #d9d9d9;
       overflow: auto;
+      cursor: pointer;
 
       .left {
         display: flex;
@@ -46,6 +47,7 @@
 
       .middle {
         display: flex;
+        max-width: 460px;
         margin-left: 5px;
         justify-content: center;
         flex-direction: column;

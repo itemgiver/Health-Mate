@@ -16,8 +16,8 @@ const style_head_text = {
 };
 
 const style_img = {
-  paddingTop: "15px",
-  paddingBottom: "15px",
+  paddingTop: "50px",
+  paddingBottom: "30px",
   marginLeft: "50%",
 };
 
@@ -135,9 +135,8 @@ export default function UserProfile(props: { id: string; value: any }) {
       setName(newName);
       openModals(-1);
       return true;
-    }
-    else {
-      alert("한 자 이상 입력해주세요.");
+    } else {
+      alert("Please type more than one character.");
       return false;
     }
   };
@@ -146,9 +145,8 @@ export default function UserProfile(props: { id: string; value: any }) {
       setAge(newAge);
       openModals(-1);
       return true;
-    }
-    else {
-      alert("숫자를 입력해주세요.");
+    } else {
+      alert("Please type only numbers.");
       return false;
     }
   };
@@ -157,9 +155,8 @@ export default function UserProfile(props: { id: string; value: any }) {
       setLoc(newLoc);
       openModals(-1);
       return true;
-    }
-    else {
-      alert("한 자 이상 입력해주세요.");
+    } else {
+      alert("Please type more than one character.");
       return false;
     }
   };
@@ -175,12 +172,12 @@ export default function UserProfile(props: { id: string; value: any }) {
   };
 
   return (
-    <Fragment>
+    <div>
       {profile && (
         <Fragment>
-          <div style={{ backgroundColor: "white" }}>
+          <div>
             <div style={style_title}>
-              <p style={style_head_text}>내 프로필 수정</p>
+              <p style={style_head_text}>My Profile Setting</p>
             </div>
             <div style={style_img}>
               <img
@@ -200,7 +197,7 @@ export default function UserProfile(props: { id: string; value: any }) {
                   openModals(1);
                 }}
               >
-                <button style={style_button}>이름</button>: {name}
+                <button style={style_button}>Name</button>: {name}
               </div>
 
               <div
@@ -209,7 +206,7 @@ export default function UserProfile(props: { id: string; value: any }) {
                   openModals(2);
                 }}
               >
-                <button style={style_button}>나이</button>: {age}
+                <button style={style_button}>Age</button>: {age}
               </div>
               <div
                 style={style_basicText}
@@ -217,7 +214,7 @@ export default function UserProfile(props: { id: string; value: any }) {
                   openModals(3);
                 }}
               >
-                <button style={style_button}>지역</button>: {location}
+                <button style={style_button}>Location</button>: {location}
               </div>
               <div
                 style={style_basicText}
@@ -225,7 +222,7 @@ export default function UserProfile(props: { id: string; value: any }) {
                   openModals(4);
                 }}
               >
-                <button style={style_button}>소개</button>
+                <button style={style_button}>Introduction</button>
                 <p style={style_description}>{description}</p>
               </div>
             </div>
@@ -280,7 +277,7 @@ export default function UserProfile(props: { id: string; value: any }) {
                       changeInput();
                     }}
                   >
-                    수정
+                    modify
                   </button>
                 </div>
               </div>
@@ -288,6 +285,6 @@ export default function UserProfile(props: { id: string; value: any }) {
           </div>
         </Fragment>
       )}
-    </Fragment>
+    </div>
   );
 }

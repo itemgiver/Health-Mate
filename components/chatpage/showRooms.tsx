@@ -21,7 +21,7 @@ export default function ShowRooms(props: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <p className={styles.text}>Chats</p>
+        <p className={styles.text}>My Chats</p>
       </div>
       {chatRooms.map((chatRoom, idx) => {
         const friendId =

@@ -4,12 +4,13 @@ import "firebase/firestore";
 
 // firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCkCdeiL6fDWgz0e_MpSxEupV3VhP03-Uk",
-  authDomain: "health-mate-a3b93.firebaseapp.com",
-  projectId: "health-mate-a3b93",
-  storageBucket: "health-mate-a3b93.appspot.com",
-  messagingSenderId: "441087718708",
-  appId: "1:441087718708:web:4b149d151a3acb19f4a161",
+  apiKey: "AIzaSyA9he7JPxbUTBkkEhORjnBNdrSbnFSnfdo",
+  authDomain: "health-mate-237fe.firebaseapp.com",
+  projectId: "health-mate-237fe",
+  storageBucket: "health-mate-237fe.appspot.com",
+  messagingSenderId: "632751913909",
+  appId: "1:632751913909:web:e36560341748ed5c1df7fc",
+  measurementId: "G-M4WFD3W9KF",
 };
 
 if (!firebase.apps.length) {

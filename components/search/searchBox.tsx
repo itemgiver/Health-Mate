@@ -32,12 +32,6 @@ export default function SearchBox(props: Props) {
   return (
     <>
       <div className={styles.container}>
-        <select ref={dropRef} style={{marginBottom: "10px", marginLeft: "5px",}} onChange={handleDrop}>
-          <option value="name">이름</option>
-          <option value="age">나이</option>
-          <option value="location">지역</option>
-          <option value="description">소개</option>
-        </select>
         <div className={styles.searchBox}>
           <div className={styles.searchIcon}>
             <SearchOutlined />

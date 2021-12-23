@@ -43,7 +43,7 @@ export default function DisplayProfile(props: Props) {
                 {profile.location}
               </li>
               <li className={styles.li}>
-                <span className={styles.span}>Description:</span>{" "}
+                <span className={styles.span}>Introduction:</span>{" "}
                 {profile.description}
               </li>
             </ul>
