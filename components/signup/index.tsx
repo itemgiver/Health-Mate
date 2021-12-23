@@ -51,36 +51,36 @@ export default function SignUpComponent() {
           autoComplete="off"
         >
           <Form.Item
-            label="이름"
+            label="Name"
             name="name"
             rules={[
               {
                 required: true,
-                message: "이름을 입력하세요",
+                message: "Enter your name.",
               },
             ]}
           >
             <Input />
           </Form.Item>
           <Form.Item
-            label="나이"
+            label="Age"
             name="age"
             rules={[
               {
                 required: true,
-                message: "나이를 입력하세요",
+                message: "Enter your age.",
               },
             ]}
           >
             <Input />
           </Form.Item>
           <Form.Item
-            label="프로필사진"
+            label="ImgSrc"
             name="imgSrc"
             rules={[
               {
                 required: true,
-                message: "프로필사진 링크를 추가하시오",
+                message: "Add your profile image link.",
               },
             ]}
           >
@@ -88,25 +88,25 @@ export default function SignUpComponent() {
           </Form.Item>
           <Form.Item
             name="memberType"
-            label="멘토/멘티 선택하시오"
+            label="Select Mentor or Mentee."
             rules={[
               {
                 required: true,
-                message: "역할을 선택하시오",
+                message: "Enter your user type.",
               },
             ]}
           >
             <Radio.Group>
-              <Radio value="mentor">멘토</Radio>
-              <Radio value="mentee">멘티</Radio>
+              <Radio value="mentor">Mentor</Radio>
+              <Radio value="mentee">Mentee</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item name="intro" label="소개">
+          <Form.Item name="intro" label="Introduction">
             <Input.TextArea />
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              회원가입하기
+              Sign Up
             </Button>
           </Form.Item>
         </Form>
