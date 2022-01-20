@@ -1,6 +1,6 @@
 # Health Mate
 
-A lot of people who exercise want to work out with other people. Therefore, we created the "Health Mate" application to help users to find their health mate. They can easily see other people's profiles and approach them by sending messages. There are four main functionalities in this app. Search Page, Home Page, Chat Page, and Setting Page. People can use these functions by pressing the buttons at the bottom. We put a demo link and videos below, so take a look if you want.
+A lot of people who exercise want to workout with other people. Therefore, we created the "Health Mate" application to help users to find their health mate. They can easily see other people's profiles and approach them by sending messages. There are four main functionalities in this app. Search Page, Home Page, Chat Page, and Setting Page. People can use these functions by pressing the buttons at the bottom. We put a demo link and videos below, so take a look if you want.
 
 ## Demo Link
 
@@ -12,7 +12,7 @@ https://health-mate-ruby.vercel.app/
 2. After you log in, you will see the homepage that contains basic information about you and your health mates.
 3. You can move to the search page to find new friends to exercise together.
 4. If you find a new friend, you can send messages on the chat page.
-5. Lastly, you can work out with your new friends.
+5. Lastly, you can workout with your new friends.
 
 ## Webpage Preview
 
