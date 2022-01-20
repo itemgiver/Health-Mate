@@ -10,6 +10,10 @@ A lot of people who exercise want to work out with other people. Therefore, we c
 4. If you find a new friend, you can send messages on the chat page.
 5. Lastly, you can work out with your new friends.
 
+## Demo Link
+
+https://health-mate-ruby.vercel.app/
+
 ## Webpage Preview
 
 ### Login, Home Page, Search Page
@@ -19,7 +23,3 @@ A lot of people who exercise want to work out with other people. Therefore, we c
 ### Chat Page
 
 <img src="https://user-images.githubusercontent.com/87184009/147428061-ba59e639-8ba2-4494-9b43-68d323b869f2.gif" alt="drawing" width="50%"/>
-
-## Demo Link
-
-https://health-mate-ruby.vercel.app/
